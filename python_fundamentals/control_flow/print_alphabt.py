@@ -5,4 +5,4 @@ for letter in range(97, 123):
     if letter != 101 and letter != 113:
         result += chr(letter)
 
-print("{}".format(result),end= '')
+print("{}".format(result), end='')
