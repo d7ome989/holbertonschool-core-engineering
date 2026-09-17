@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
-alphabet = "abcdefghijklmnopqrstuvwxyz"
 result = ""
 
-for letter in alphabet:
-    if letter != 'q' and letter != 'e':
-        result += letter
+for letter in range(97, 123):
+    if letter != 101 and letter != 113:
+        result += chr(letter)
 
 print("{}".format(result))
