@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-import string
-
+alphabet = "abcdefghijklmnopqrstuvwxyz"
 result = ""
-for letter in string.ascii_lowercase:
+
+for letter in alphabet:
     if letter != 'q' and letter != 'e':
         result += letter
 
