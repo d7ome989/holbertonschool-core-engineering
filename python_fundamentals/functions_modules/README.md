@@ -1,0 +1,1 @@
+this is to lern how to use the funtion in python 
