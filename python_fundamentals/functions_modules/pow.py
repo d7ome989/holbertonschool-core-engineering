@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
 def pow(a, b):
     result = 1
-    b = abs(b)
-    for i in range(b):
-        result = result * a
-    return result
+    if b < 0:
+        for i in range(-b):
+            result = result * a
+        return 1 / result
+    else:
+        for i in range(b):
+            result = result * a
+        return result
