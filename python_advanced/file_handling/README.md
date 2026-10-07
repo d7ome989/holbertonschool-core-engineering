@@ -104,12 +104,89 @@ We offer a truly innovative approach to education:
 ...
 ```
 
+### 1. Write to a file
+
+File: `write_file.py`
+
+Function that writes a string to a UTF-8 text file and returns the number of characters written.
+
+- Prototype: `def write_file(filename="", text=""):`
+- Must use the `with` statement
+- Creates the file if it doesn't exist
+- Overwrites the content of the file if it already exists
+- No module imports allowed
+
+```python
+#!/usr/bin/env python3
+"""Module that writes a string to a text file."""
+
+
+def write_file(filename="", text=""):
+    """Write a string to a UTF8 file and return its length."""
+    with open(filename, "w", encoding="utf-8") as f:
+        d = f.write(text)
+        return d
+```
+
+Example:
+
+```
+$ cat main.py
+#!/usr/bin/env python3
+write_file = __import__('write_file').write_file
+
+nb_characters = write_file("my_first_file.txt", "This School is so cool!\n")
+print(nb_characters)
+
+$ ./main.py
+24
+$ cat my_first_file.txt
+This School is so cool!
+```
+
+### 2. Append to a file
+
+File: `append_write.py`
+
+Function that appends a string at the end of a UTF-8 text file and returns the number of characters added.
+
+- Prototype: `def append_write(filename="", text=""):`
+- Creates the file if it doesn't exist
+- Must use the `with` statement
+- No module imports allowed
+
+```python
+#!/usr/bin/env python3
+"""Module that appends a string to a text file."""
+
+
+def append_write(filename="", text=""):
+    """Append a string to a UTF8 file and return its length."""
+    with open(filename, "a", encoding="utf-8") as f:
+        app = f.write(text)
+        return app
+```
+
+Example:
+
+```
+$ cat main.py
+#!/usr/bin/env python3
+append_write = __import__('append_write').append_write
+
+nb_characters_added = append_write("file_append.txt", "Holberton School!\n")
+print(nb_characters_added)
+
+$ ./main.py
+18
+```
+
 ## Usage
 
 ```bash
-chmod +x read_file.py main.py
+chmod +x read_file.py write_file.py append_write.py main.py
 ./main.py
-pycodestyle read_file.py
+pycodestyle read_file.py write_file.py append_write.py
 ```
 
 ## Resources
@@ -121,4 +198,4 @@ pycodestyle read_file.py
 
 ## Author
 
-Holberton School student
+Abdulrhman Saleh Alduqil
